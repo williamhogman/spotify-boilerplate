@@ -1,9 +1,9 @@
 #!/usr/bin/env python
-import yaml
 import scss
 import util
 import shutil
 import argparse
+import json
 import os
 import os.path as path
 from functools import partial
@@ -30,6 +30,7 @@ def build_application(opt):
 
     manifest = util.load_manifest(manifest_file)
 
+    json.dump(manifest,open(buildpath("manifest.json"),"w"))
 
     tr = util.TemplateRenderer()
     tr.add(manifest)
