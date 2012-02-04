@@ -80,7 +80,7 @@ class BuildFailedError(RuntimeError):
     """ Raised if a critical failure occurs in the build process """
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description='Process some integers.')
+    parser = argparse.ArgumentParser(description='Build your app')
     
     parser.add_argument('appdir',nargs="?",default="./",
                         help="the directory from which to build the application")
