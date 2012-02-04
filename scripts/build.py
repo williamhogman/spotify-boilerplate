@@ -1,6 +1,7 @@
 #!/usr/bin/env python
-import util
 import yaml
+import scss
+import util
 import shutil
 import argparse
 import os
@@ -28,23 +29,35 @@ def build_application(opt):
         raise BuildFailedError("Could not find manifest file") 
 
     manifest = util.load_manifest(manifest_file)
-    
+
+
     tr = util.TemplateRenderer()
     tr.add(manifest)
 
+    #Skype will compress for us
+    scc = scss.Scss(scss_vars=manifest,
+                    scss_opts={"compress": False}) 
+
+    
     for filename in source_files(basedir):
         # WAT? - something.HtMl -> [something, .HtMl] -> "html"
         ext = path.splitext(filename)[1][1:].lower()
         
-        with open(projpath(filename)) as f:
-                data = f.read()
+        data = open(projpath(filename)).read()
+        
         if ext == "html":
             util.write_file(buildpath(filename),tr.render(data))
             print("[*] Rendered template {}".format(filename))
+        elif ext == "scss":
+            css = scc.compile(data)
+            util.write_file(buildpath(filename),css)
+            print("[*] Compiled SCSS {}".format(filename))
         else:
+            data = open(projpath(filename)).read()
             util.write_file(buildpath(filename),data)            
             print("[*] Copied {}".format(filename))
         
+
 
         
 def source_files(basedir):
