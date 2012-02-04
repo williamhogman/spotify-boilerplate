@@ -34,7 +34,7 @@ def build_application(opt):
     tr = util.TemplateRenderer()
     tr.add(manifest)
 
-    #Skype will compress for us
+    #Spotify will compress for us
     scc = scss.Scss(scss_vars=manifest,
                     scss_opts={"compress": False}) 
 
