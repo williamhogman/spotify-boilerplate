@@ -39,20 +39,13 @@ def build_application(opt):
         with open(projpath(filename)) as f:
                 data = f.read()
         if ext == "html":
-            write_file(buildpath(filename),tr.render(data))
+            util.write_file(buildpath(filename),tr.render(data))
             print("[*] Rendered template {}".format(filename))
         else:
-            write_file(buildpath(filename),data)            
+            util.write_file(buildpath(filename),data)            
             print("[*] Copied {}".format(filename))
         
 
-def write_file(filename,data):
-    try:
-        os.makedirs(path.dirname(filename))
-    except OSError:
-        pass
-    with open(filename,"w") as f:
-        f.write(data)
         
 def source_files(basedir):
     for root,dirs,files in os.walk(basedir,topdown=True):
