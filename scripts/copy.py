@@ -6,7 +6,7 @@ import os
 
 if __name__ == '__main__':
     manifest = util.load_manifest("manifest.yaml")
-    path = os.path.expanduser("~/Spotify/{}/".format(manifest["AppName"]["en"]))
+    path = os.path.expanduser("~/Spotify/{}/".format(manifest["AppName"]["en"].lower()))
 
     try:
         shutil.rmtree(path)

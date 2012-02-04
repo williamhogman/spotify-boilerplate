@@ -10,6 +10,6 @@ if __name__ == '__main__':
     
     name = manifest["AppName"]["en"]
 
-    url = "spotify:app:{}".format(name)
+    url = "spotify:app:{}".format(name.lower())
     cf = "open {}" if sys.platform == "darwin" else "xdg-open {}"
     os.system(cf.format(url))
