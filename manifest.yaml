@@ -1,0 +1,12 @@
+AppName: 
+  en: MyApp
+BundleType: Application
+RequiredInterface: 1
+
+AppIcon:
+  36x18: "img/sidebar_icon.png"
+  64x64: "img/icon.png"
+  128x128: "img/large_icon.png"
+  
+SupportedLanguages:
+  - en
