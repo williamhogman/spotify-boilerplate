@@ -53,6 +53,10 @@ def build_application(opt):
             css = scc.compile(data)
             util.write_file(buildpath(filename),css)
             print("[*] Compiled SCSS {}".format(filename))
+        elif ext == "coffee":
+            js = util.coffee(data)
+            util.write_file(buildpath(filename),js)
+            print("[*] Compiled CoffeeScript {}".format(filename))
         else:
             data = open(projpath(filename)).read()
             util.write_file(buildpath(filename),data)            
