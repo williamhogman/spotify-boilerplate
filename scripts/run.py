@@ -6,7 +6,7 @@ import sys
 
 
 if __name__ == '__main__':
-    manifest = util.load_yaml("manifest.yaml")
+    manifest = util.load_manifest("manifest.yaml")
     
     name = manifest["AppName"]["en"]
 
