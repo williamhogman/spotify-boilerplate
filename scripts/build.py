@@ -1,6 +1,9 @@
 #!/usr/bin/env python
-import scss
+from util.exc import BuildFailedError
 import util
+
+import scss
+
 import shutil
 import argparse
 import json
@@ -86,9 +89,6 @@ def source_files(basedir):
         for f in files:
             yield path.relpath(path.join(root,f),start=basedir)
             
-    
-class BuildFailedError(RuntimeError):
-    """ Raised if a critical failure occurs in the build process """
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description='Build your app')
@@ -100,5 +100,7 @@ if __name__ == "__main__":
         build_application(parser.parse_args())
     except BuildFailedError as e:
         print("Build failed: {}".format(e))
+        if e.longmsg != "":
+            print(e.longmsg)
     else:
         print("Build complete")
