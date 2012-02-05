@@ -18,6 +18,6 @@ class TemplateRenderer(object):
         return Template(template).render(**self.context)
         
     def local_file(self,name):
-        return "sp://{}/{}".format(manifest["AppName"]["en"],name)
+        return "sp://{}/{}".format(self.context["AppName"]["en"].lower(),name)
         
 
