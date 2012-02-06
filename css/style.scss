@@ -4,6 +4,20 @@
  * ole CSS name your file .css 
  */
 
+/* The background color of the spotify window */
+$spotify-background-color: rgb(55,55,55);
+
+/* Used on sidebars and the like */
+$spotify-sidebar-color: rgb(71,71,71);
+
+/* We use Spotify's background by default. In a real app you will
+ * probably want tols change something that fits your applications
+ * graphical style.
+ */
+$app-background: $spotify-background-color;
+
 body {
-    background: #111;
+    background: $app-background;
+    /* Make sure that the background is used for the entire AppView */
+    min-height: 100%; 
 }
