@@ -21,3 +21,37 @@ body {
     /* Make sure that the background is used for the entire AppView */
     min-height: 100%; 
 }
+
+#navbar {
+    background: darken($app-background,10%);
+    width: 100%;
+    $nb-height: 46px;
+    height: $nb-height;
+    
+    .logo {
+	$spacing: 8px;
+	/* half of the spacing on top */
+	margin-top: $spacing/2;
+	margin-right: $spacing;
+	float: left;
+	width: 128px;
+	height: $nb-height - $spacing;
+	background: rgb(33,33,33);
+    }
+    .nav {
+	float: left; 
+	display: block;
+	/* you can increase this to make it more spacier */
+	$spacing: 12px;
+	$nav-size: $nb-height - $spacing;
+	height: $nav-size;
+	margin-top: $spacing/2;
+	li {
+	    display: block;
+	    float: left;	    
+	    padding: 0 $spacing;
+	    line-height: $nav-size;
+	    font-size: 1.1em;
+	}
+    }
+}
