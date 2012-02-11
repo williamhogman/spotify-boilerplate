@@ -24,9 +24,9 @@ class TemplateRenderer(object):
 
     def app_url(self,link=None):
         if link is None:
-            return "sp:{}".format(self.app_id)
+            return "spotify:app:{}".format(self.app_id)
         else: 
-            return "sp:{}:{}".format(self.app_id,link)
+            return "spotify:app:{}:{}".format(self.app_id,link)
             
     def local_file(self,name):
         return "sp://{}/{}".format(self.app_id,name)
