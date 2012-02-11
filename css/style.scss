@@ -55,3 +55,17 @@ body {
 	}
     }
 }
+
+.logo {
+    /* Style your svg logo in here  
+     * changing the logo style here changes it everywhere in your app.
+     * If you need to change something for just the header change it there
+     */
+    
+    .text {
+	fill: #AAA;
+	font-family: "Helvetica";
+	font-size: 1.5em;
+    }
+
+}
