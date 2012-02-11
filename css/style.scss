@@ -4,6 +4,7 @@
  * ole CSS name your file .css 
  */
 
+
 /* The background color of the spotify window */
 $spotify-background-color: rgb(55,55,55);
 
@@ -23,11 +24,19 @@ body {
 }
 
 #navbar {
-    background: darken($app-background,10%);
+    $spotify-tabbar-start: rgb(50,50,50);
+    $spotify-tabbar-end: rgb(25,25,25);
+    $spotify-tabbar-border: 1px solid #000;
+    $spotify-tabbar: -webkit-gradient(linear,
+				      left top,
+				      left bottom,
+				      from($spotify-tabbar-start),
+				      to($spotify-tabbar-end));
+    border-bottom: $spotify-tabbar-border;
+    background: $spotify-tabbar;
     width: 100%;
     $nb-height: 46px;
     height: $nb-height;
-    
     .logo {
 	$spacing: 8px;
 	/* half of the spacing on top */
@@ -36,7 +45,6 @@ body {
 	float: left;
 	width: 128px;
 	height: $nb-height - $spacing;
-	background: rgb(33,33,33);
     }
     .nav {
 	float: left; 
