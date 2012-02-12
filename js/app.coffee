@@ -86,8 +86,15 @@ mod = (fn) ->
 
 
 router.addPage "welcome", (args) ->
-        main.innerText = "Hello there"
+        # We are probably want to check if this user is really new
+        # with our server.
+        cont = @document.createElement("div")
 
+        (p = @document.createElement("p")).innerText = "Hello there"
+        cont.appendChild p
+
+        main.innerHtml = ""
+        main.appendChild cont
 
 
 
