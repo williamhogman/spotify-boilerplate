@@ -7,6 +7,8 @@
     <title>Spotify App</title>
   </head>
   <body>
+    <script src="${local_file('js/app.coffee')}" defer="defer" ></script>
+
     <!-- Note only use the navbar if you what you are trying to do
          won't work with the native Tabs -->
     <div id="navbar">
@@ -26,7 +28,8 @@
 	<li><a href="${app_url('herp')}">Herp</a></li>
       </ul>
     </div>
-    <h1 id="header">Hello, world!</h1>
-    <div class="button">Test...</div>
+    <div id="main">
+      <!-- The main application canvas when using the router -->
+    </div>
   </body>
 </html>
